@@ -1,0 +1,29 @@
+package com.example.java;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args)
+    { int i,j,n;
+        Scanner a=new Scanner(System.in);// System.in means that its just input here for the size of the array
+        n=a.nextInt();// here it is used to specify that its of integer type
+
+        int[] arr=new int[n];
+
+        for(i=0;i<n;i++)
+        {
+            arr[i]=a.nextInt();// here for the elements of the array
+        }
+
+        for(j=n-1;j>=0;j--)
+        {
+            System.out.print(arr[j]+"");
+        }
+    }
+
+    }
+
+
+
