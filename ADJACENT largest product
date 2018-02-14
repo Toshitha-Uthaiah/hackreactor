@@ -1,0 +1,15 @@
+int adjacentElementsProduct(int[] inputArray) {
+    int n,i=0,maxlength;
+    n=inputArray.length;
+    
+    maxlength= inputArray[i]*inputArray[i+1];
+    
+    for(i=0;i<n-1;i++)
+    {
+          
+            if(maxlength<inputArray[i]*inputArray[i+1])
+                maxlength = inputArray[i]*inputArray[i+1];
+    }
+    return maxlength;
+    
+}
