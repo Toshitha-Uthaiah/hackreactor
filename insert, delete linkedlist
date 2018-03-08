@@ -1,0 +1,96 @@
+package com.example.java;
+
+/**
+ * Created by Toshitha on 3/4/2018.
+ */
+public class LinkedList {
+    //define the head node
+    Node head;
+
+    public void insert(int data)
+    {
+        //when you have to insert it should first contain a new node
+        // create a new node
+        Node node=new Node();
+        //define the two aspects of the node->data and reference
+        node.data=data;//node.data as it is a part of the node
+        //you will have to check if its the first node or not
+        if(head==null)//here not node.head as it is a characteristic that u are working with
+        //if it is the null then make it the head
+        {   //the first node only would be the head
+            head=node;
+        }
+        //else continue
+        else
+        {   //your adding that new node here so create a node and it is made a head
+            Node n = head;
+            //to check where to add it so create a reference
+            //null is the stopping criteria
+            while(n.next!=null)
+            {   //if not null jump to the next node
+                n = n.next;
+            }
+            //else now you have to add the new one
+            n.next = node;
+        }
+        //now you have to travel until u get a null value in the reference
+        //basically you are going to be jumping from one node to another node
+    }
+    public void show()
+    {    Node node = head;
+
+         while(node.next!= null )
+         {
+             System.out.println(node.data);
+             node = node.next;
+         }
+        System.out.println(node.data);
+
+
+    }
+
+    public void insertAtStart(int data)
+    {
+        //here we have to create a new node and put it in the beginning
+        //thus this has to be a head node
+        //thus this has to be referencing to the next node
+
+        Node node= new Node();
+        node.data= data;
+
+        //here the new node has to be able to reference the old node
+        //then u will be putting this new node as its head
+        node.next=head;
+        head = node;
+    }
+
+    public void insertAt(int index, int data) {
+        Node node = new Node();
+        node.data = data;
+        if (index == 0) {
+            insertAtStart(data);
+        } else {
+            Node n = head;
+            for (int i = 0; i < index - 1; i++) {
+                n = n.next;
+            }
+            node.next = n.next;
+            n.next = node;
+        }
+    }
+        public void deleteAt(int index) {
+            //only considering that you will be deleting the first node in the list
+            // then we have to initialise the head value
+            if (index == 0) {
+                head = head.next;
+            } else {
+                Node n = head;
+                Node n1 = null;
+                for (int i = 0; i < index - 1; i++) {
+                    n1 = n.next;
+                    n.next = n1.next;
+                }
+            }
+    }
+
+    }
