@@ -23,6 +23,7 @@ public class LinkedList {
         //else continue
         else
         {   //your adding that new node here so create a node and it is made a head
+            //does not do much otherwise 
             Node n = head;
             //to check where to add it so create a reference
             //null is the stopping criteria
@@ -37,7 +38,9 @@ public class LinkedList {
         //basically you are going to be jumping from one node to another node
     }
     public void show()
-    {    Node node = head;
+    {    //saying that start with the head node
+    
+         Node node = head;
 
          while(node.next!= null )
          {
