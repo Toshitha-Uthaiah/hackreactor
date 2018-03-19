@@ -1,0 +1,28 @@
+package com.example.java;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+         int A[]={18, 3, 6, 2, 34, 89, 2};
+         SelectionSort(A);
+        for(int i=0;i<A.length;i++)
+        System.out.println(A[i]);
+    }
+    public static void SelectionSort(int[] A) {
+        int i;
+        int min = A[0];
+        for (i = 0; i < A.length - 1; i++) {
+            for (int j = 1; i < A.length - 1; j++) {
+                if (A[j] < A[min])
+                {
+                    min = j;
+                }
+            }
+            i = 0;
+            int temp = A[min];
+            A[min] = A[i];
+            A[i] = temp;
+        }
+    }
+}
