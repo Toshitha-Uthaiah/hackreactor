@@ -1,0 +1,59 @@
+package com.example.java;
+
+/**
+ * Created by Toshitha on 3/19/2018.
+ */
+public class StackClass {
+    //Initialize all the elements of the stack, the array and the integer size
+    int maxsize;
+    int top;
+    String arr[];
+
+    public StackClass(int n) {
+        //initialize all the concepts that are needed now
+        top = 0;
+        maxsize = n;
+        arr = new String[maxsize];
+    }
+
+    public void push(String str) {
+        //check if it is overflowing 
+        if (top < maxsize) {
+            arr[top] = str;//insert the element into the top
+            top++;//now the top value has to change 
+        } else {
+            System.out.println("Stack Overflow");
+        }
+
+    }
+
+    public boolean empty() {
+        if (top == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String peek() {
+        if (top > 0) {
+            return arr[top - 1];
+        } else {
+            return null;
+        }
+    }
+
+    public String pop() {
+        if (!this.empty())//checks if it not an empty stack so that it can pop out some element 
+        {
+            String temp = this.peek();// it basically gets that element 
+            arr[top-1]=null;//puts a null in the place 
+            top--;//decrements and changes the top value 
+            return temp;
+
+        } else {
+            return null;
+        }
+    }
+
+}
