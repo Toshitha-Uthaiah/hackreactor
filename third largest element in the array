@@ -1,0 +1,17 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        int l = nums.length;
+        // sort the elements first
+        Arrays.sort(nums);
+        int r = 1;
+        //the highest probability that the 3rd last element will be the 3rd greatest
+        for(int i=l-2;i>=0;i--){
+        //to make sure that there is no repetition 
+            if(nums[i]!=nums[i+1])
+            r++;
+            //counter for the largest elements 
+            if(r==3)return nums[i];
+        }
+        return nums[l-1];
+    }
+}
